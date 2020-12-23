@@ -20,7 +20,6 @@ for i in range(int(symbols_num)):
     password.append(symbols[randint(0, len(symbols) - 1)])
 
 shuffle(password)
-print(password)
 pass_str = ''.join(str(sign) for sign in password)
 
 print(f"Here is your password: {pass_str}")
