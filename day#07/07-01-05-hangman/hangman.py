@@ -9,11 +9,19 @@ word_list = [
     'weekend', 'dice', 'preproccessor',
     ]
 
-chosen_word = word_list[random.randint(0, len(word_list) - 1)]
-guess = input("Guess a letter in secred word, type a letter and press enter.\n").lower()
 
-for letter in chosen_word:
+chosen_word = word_list[random.randint(0, len(word_list) - 1)]
+
+guess_field = ["_" for i in range(len(chosen_word) -1)]
+guess = input("Guess a letter in secred word, type a letter and press enter.\n").lower()
+ 
+
+for  i, letter in enumerate(chosen_word):
     if letter == guess:
-        print("Right")
-    else:
-        print("Wrong")
+        guess_field.insert(i, letter)
+
+user_typed = ' '    
+for letter in guess_field:
+    user_typed += " " + letter
+
+print(user_typed)
